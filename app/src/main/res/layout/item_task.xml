@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="4dp"
+    android:paddingVertical="10dp"
+    android:background="@drawable/border_bottom">
+
+    <!-- Nota: Necesitas crear un recurso drawable llamado 'border_bottom.xml'
+         para la línea divisoria si no lo tienes -->
+
+    <!-- Checkbox de Completado -->
+    <CheckBox
+        android:id="@+id/cbTaskCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Título de la Tarea -->
+    <TextView
+        android:id="@+id/tvTaskTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cbTaskCompleted"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Comprar leche y huevos" />
+
+    <!-- Contenedor para la Información Adicional (Fecha, Prioridad, Estado) -->
+    <LinearLayout
+        android:id="@+id/infoContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/cbTaskCompleted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTaskTitle">
+
+        <!-- Fecha de Ejecución -->
+        <TextView
+            android:id="@+id/tvDueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:drawablePadding="4dp"
+            android:drawableStart="@android:drawable/ic_menu_today"
+            tools:text="Fecha: 2025-11-25" />
+
+        <!-- Prioridad -->
+        <TextView
+            android:id="@+id/tvPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/holo_red_dark"
+            tools:text="Prioridad: ALTA" />
+
+        <!-- Estado -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/holo_green_dark"
+            tools:text="Estado: EN PROGRESO" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
